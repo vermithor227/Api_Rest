@@ -1,0 +1,71 @@
+@baseUrl = http://localhost:4000
+
+##############################
+# CATEGORÍA
+##############################
+
+### Listar todas las categorías
+GET {{baseUrl}}/categoria
+
+### Obtener categoría por id
+GET {{baseUrl}}/categoria/1
+
+### Crear categoría
+POST {{baseUrl}}/categoria
+Content-Type: application/json
+
+{
+  "nombre": "Hogar"
+}
+
+### Actualizar categoría
+PUT {{baseUrl}}/categoria/1
+Content-Type: application/json
+
+{
+  "nombre": "Tecnología y gadgets"
+}
+
+### Eliminar categoría (usa una que no tenga productos)
+DELETE {{baseUrl}}/categoria/2
+
+### Categoría que no existe (debe dar 404)
+GET {{baseUrl}}/categoria/999
+
+##############################
+# PRODUCTO
+##############################
+
+### Listar todos los productos
+GET {{baseUrl}}/producto
+
+### Obtener producto por id
+GET {{baseUrl}}/producto/1
+
+### Crear producto
+POST {{baseUrl}}/producto
+Content-Type: application/json
+
+{
+  "nombre": "Teclado",
+  "id_categoria": 1,
+  "precio": 80000,
+  "stock": 5
+}
+
+### Actualizar producto
+PUT {{baseUrl}}/producto/1
+Content-Type: application/json
+
+{
+  "nombre": "Teclado mecánico",
+  "id_categoria": 1,
+  "precio": 95000,
+  "stock": 8
+}
+
+### Eliminar producto
+DELETE {{baseUrl}}/producto/1
+
+### Producto que no existe (debe dar 404)
+GET {{baseUrl}}/producto/999
